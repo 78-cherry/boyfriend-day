@@ -1,0 +1,33 @@
+BOYFRIEND'S DAY WEBSITE — QUICK SETUP
+
+1. Keep this entire folder together.
+2. Open assets.
+3. Add your 12 photos and name them exactly:
+   photo01.jpg
+   photo02.jpg
+   ...
+   photo12.jpg
+
+PHOTO ORDER:
+- photo01 to photo10 = the 10-photo heart collage.
+- photo11 = the single photo beside the flowing "my love / my heart..." section.
+- photo12 = the single photo on the final letter.
+
+BOUQUETS:
+- bouquet1.jpg = first bouquet / heart collage
+- bouquet2.jpg = second bouquet / flowing words
+- bouquet3.jpg = third bouquet / song
+
+PASSWORD:
+- 1910
+
+SONG:
+- The third bouquet opens an embedded YouTube player for "Until I Found You".
+- Replace the iframe URL in index.html if you want another YouTube video.
+
+GITHUB:
+Upload index.html, style.css, script.js and the assets folder to the repository.
+Then enable Settings > Pages > Deploy from a branch > main > / (root).
+
+IMPORTANT:
+This is a static GitHub Pages site. The password is a visual gate, not strong security.
