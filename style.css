@@ -108,21 +108,26 @@ button{cursor:pointer}
 }
 .heart-collage{position:relative;width:min(90vw,760px);height:min(75vh,650px);margin:auto}
 .heart-photo{
-  position:absolute;width:150px;height:150px;background:#fff;padding:8px;
+  position:absolute;width:115px;height:145px;background:#fff;padding:8px;
   box-shadow:0 12px 28px rgba(48,70,80,.22);opacity:0;
   animation:heartPop .75s forwards;overflow:hidden
 }
 .heart-photo img{width:100%;height:100%;object-fit:cover;display:block}
 .hp1{left:25%;top:5%;--r:-8deg;animation-delay:.05s}
-.hp2{left:42%;top:5%;--r:8deg;animation-delay:.12s}
-.hp3{left:12%;top:25%;--r:-12deg;animation-delay:.19s}
-.hp4{left:30%;top:23%;--r:3deg;animation-delay:.26s}
-.hp5{left:49%;top:23%;--r:-4deg;animation-delay:.33s}
-.hp6{left:68%;top:25%;--r:12deg;animation-delay:.40s}
-.hp7{left:22%;top:45%;--r:-5deg;animation-delay:.47s}
-.hp8{left:42%;top:44%;--r:6deg;animation-delay:.54s}
-.hp9{left:61%;top:45%;--r:-7deg;animation-delay:.61s}
-.hp10{left:40%;top:64%;--r:2deg;animation-delay:.68s}
+.hp2{left:50%;top:5%;--r:8deg;animation-delay:.12s}
+
+.hp3{left:8%;top:25%;--r:-12deg;animation-delay:.19s}
+.hp4{left:30%;top:25%;--r:4deg;animation-delay:.26s}
+.hp5{left:52%;top:25%;--r:-4deg;animation-delay:.33s}
+.hp6{left:74%;top:25%;--r:12deg;animation-delay:.40s}
+
+.hp7{left:15%;top:45%;--r:-6deg;animation-delay:.47s}
+.hp8{left:38%;top:44%;--r:5deg;animation-delay:.54s}
+.hp9{left:61%;top:44%;--r:-5deg;animation-delay:.61s}
+.hp10{left:76%;top:45%;--r:7deg;animation-delay:.68s}
+
+.hp11{left:27%;top:64%;--r:-6deg;animation-delay:.75s}
+.hp12{left:51%;top:64%;--r:7deg;animation-delay:.82s}
 .heart-word{
   position:absolute;left:50%;top:82%;transform:translateX(-50%);
   font-family:"Berkshire Swash",cursive;color:#df5575;font-size:34px
