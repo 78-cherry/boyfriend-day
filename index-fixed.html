@@ -1,163 +1,611 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0, viewport-fit=cover"
+  >
+
   <title>For You ♡</title>
-  <meta name="description" content="A little Boyfriend's Day surprise.">
+
+  <meta
+    name="description"
+    content="A little Boyfriend's Day surprise."
+  >
+
+  <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Berkshire+Swash&family=DM+Sans:wght@400;500;600;700&family=Patrick+Hand&family=Cormorant+Garamond:wght@500;600&display=swap" rel="stylesheet">
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Berkshire+Swash&family=DM+Sans:wght@400;500;600;700&family=Patrick+Hand&family=Cormorant+Garamond:wght@500;600&display=swap"
+    rel="stylesheet"
+  >
+
+  <!-- Website CSS -->
   <link rel="stylesheet" href="style.css">
+
 </head>
+
+
 <body>
+
 <main id="app">
 
-  <!-- 1. PASSWORD -->
-  <section class="slide password-screen active" id="password">
+
+  <!-- ==================================================
+       1. PASSWORD SCREEN
+  ================================================== -->
+
+  <section
+    class="slide password-screen active"
+    id="password"
+  >
+
     <div class="password-card">
+
       <h1>Enter the password</h1>
-      <input id="passwordInput" type="password" inputmode="numeric" autocomplete="off" placeholder="••••" aria-label="Password">
-      <button id="passwordButton">Continue</button>
-      <p id="passwordError" class="error" aria-live="polite"></p>
+
+      <input
+        id="passwordInput"
+        type="password"
+        inputmode="numeric"
+        autocomplete="off"
+        placeholder="••••"
+        aria-label="Password"
+      >
+
+      <button id="passwordButton">
+        Continue
+      </button>
+
+      <p
+        id="passwordError"
+        class="error"
+        aria-live="polite"
+      ></p>
+
     </div>
+
   </section>
 
-  <!-- 2. WELCOME -->
-  <section class="slide paper-slide" id="welcome">
-    <div class="stars" aria-hidden="true">✦　★　✦　♡　✦</div>
+
+
+  <!-- ==================================================
+       2. WELCOME SCREEN
+  ================================================== -->
+
+  <section
+    class="slide paper-slide"
+    id="welcome"
+  >
+
+    <div
+      class="stars"
+      aria-hidden="true"
+    >
+      ✦　★　✦　♡　✦
+    </div>
+
+
     <div class="welcome-content">
-      <h1 class="script-title">Happy<br>Boyfriend's Day ♡</h1>
+
+      <h1 class="script-title">
+        Happy<br>
+        Boyfriend's Day ♡
+      </h1>
+
     </div>
-    <button class="next-arrow" data-next="bouquets" aria-label="Next">›</button>
+
+
+    <button
+      class="next-arrow"
+      data-next="bouquets"
+      aria-label="Next"
+    >
+      ›
+    </button>
+
   </section>
 
-  <!-- 3. BOUQUETS -->
-  <section class="slide paper-slide" id="bouquets">
+
+
+  <!-- ==================================================
+       3. THREE BOUQUETS
+  ================================================== -->
+
+  <section
+    class="slide paper-slide"
+    id="bouquets"
+  >
+
     <div class="section-heading">
-      <h2>CLICK ON ANY BOUQUET TO OPEN</h2>
+
+      <h2>
+        CLICK ON ANY BOUQUET TO OPEN
+      </h2>
+
     </div>
+
 
     <div class="bouquet-grid">
-      <button class="bouquet-card" data-next="heart">
-        <img src="bouquet1.png" alt="First bouquet">
+
+
+      <!-- FIRST BOUQUET → HEART -->
+
+      <button
+        class="bouquet-card"
+        data-next="heart"
+        aria-label="Open first bouquet"
+      >
+
+        <img
+          src="bouquet1.png"
+          alt="First bouquet"
+        >
+
       </button>
-      <button class="bouquet-card" data-next="message">
-        <img src="bouquet2.png" alt="Second bouquet">
+
+
+
+      <!-- SECOND BOUQUET → PHOTO + MESSAGE -->
+
+      <button
+        class="bouquet-card"
+        data-next="message"
+        aria-label="Open second bouquet"
+      >
+
+        <img
+          src="bouquet2.png"
+          alt="Second bouquet"
+        >
+
       </button>
-      <button class="bouquet-card" data-next="video">
-        <img src="bouquet3.png" alt="Third bouquet">
+
+
+
+      <!-- THIRD BOUQUET → SONG -->
+
+      <button
+        class="bouquet-card"
+        data-next="video"
+        aria-label="Open third bouquet"
+      >
+
+        <img
+          src="bouquet3.png"
+          alt="Third bouquet"
+        >
+
       </button>
+
     </div>
 
-    <!-- Arrow to final letter -->
-    <button class="next-arrow bouquet-arrow" data-next="final" aria-label="Go to final letter">›</button>
+
+    <!-- ARROW → FINAL LETTER -->
+
+    <button
+      class="next-arrow bouquet-arrow"
+      data-next="final"
+      aria-label="Go to final letter"
+    >
+      ›
+    </button>
+
   </section>
 
-  <!-- 4. FIRST BOUQUET: 10 PHOTO HEART -->
-  <section class="slide paper-slide" id="heart">
-    <button class="back-button" data-next="bouquets" aria-label="Back">‹</button>
+
+
+  <!-- ==================================================
+       4. FIRST BOUQUET → 10 PHOTO HEART
+  ================================================== -->
+
+  <section
+    class="slide paper-slide"
+    id="heart"
+  >
+
+    <button
+      class="back-button"
+      data-next="bouquets"
+      aria-label="Back"
+    >
+      ‹
+    </button>
+
+
     <div class="heart-page">
-      <div class="heart-heading">a little piece of my heart ♡</div>
-      <div class="heart-collage" aria-label="Ten-photo heart collage">
-        <div class="heart-photo hp1"><img src="photo1.jpg" alt="Memory 1"></div>
-<div class="heart-photo hp2"><img src="photo2.jpg" alt="Memory 2"></div>
-<div class="heart-photo hp3"><img src="photo3.jpg" alt="Memory 3"></div>
-<div class="heart-photo hp4"><img src="photo4.jpg" alt="Memory 4"></div>
-<div class="heart-photo hp5"><img src="photo5.jpg" alt="Memory 5"></div>
-<div class="heart-photo hp6"><img src="photo6.jpg" alt="Memory 6"></div>
-<div class="heart-photo hp7"><img src="photo7.jpg" alt="Memory 7"></div>
-<div class="heart-photo hp8"><img src="photo8.jpg" alt="Memory 8"></div>
-<div class="heart-photo hp9"><img src="photo9.jpg" alt="Memory 9"></div>
-<div class="heart-photo hp10"><img src="photo10.jpg" alt="Memory 10"></div>
-<div class="heart-photo hp11"><img src="photo11.jpg" alt="Memory 11"></div>
-<div class="heart-photo hp12"><img src="photo12.jpg" alt="Memory 12"></div>
-        <div class="heart-word">you ♡</div>
+
+
+      <div class="heart-heading">
+        a little piece of my heart ♡
       </div>
+
+
+      <div
+        class="heart-collage"
+        aria-label="Ten-photo heart collage"
+      >
+
+
+        <!-- PHOTO 1 -->
+
+        <div class="heart-photo hp1">
+
+          <img
+            src="photo1.jpg"
+            alt="Memory 1"
+          >
+
+        </div>
+
+
+
+        <!-- PHOTO 2 -->
+
+        <div class="heart-photo hp2">
+
+          <img
+            src="photo2.jpg"
+            alt="Memory 2"
+          >
+
+        </div>
+
+
+
+        <!-- PHOTO 3 -->
+
+        <div class="heart-photo hp3">
+
+          <img
+            src="photo3.jpg"
+            alt="Memory 3"
+          >
+
+        </div>
+
+
+
+        <!-- PHOTO 4 -->
+
+        <div class="heart-photo hp4">
+
+          <img
+            src="photo4.jpg"
+            alt="Memory 4"
+          >
+
+        </div>
+
+
+
+        <!-- PHOTO 5 -->
+
+        <div class="heart-photo hp5">
+
+          <img
+            src="photo5.jpg"
+            alt="Memory 5"
+          >
+
+        </div>
+
+
+
+        <!-- PHOTO 6 -->
+
+        <div class="heart-photo hp6">
+
+          <img
+            src="photo6.jpg"
+            alt="Memory 6"
+          >
+
+        </div>
+
+
+
+        <!-- PHOTO 7 -->
+
+        <div class="heart-photo hp7">
+
+          <img
+            src="photo7.jpg"
+            alt="Memory 7"
+          >
+
+        </div>
+
+
+
+        <!-- PHOTO 8 -->
+
+        <div class="heart-photo hp8">
+
+          <img
+            src="photo8.jpg"
+            alt="Memory 8"
+          >
+
+        </div>
+
+
+
+        <!-- PHOTO 9 -->
+
+        <div class="heart-photo hp9">
+
+          <img
+            src="photo9.jpg"
+            alt="Memory 9"
+          >
+
+        </div>
+
+
+
+        <!-- PHOTO 10 -->
+
+        <div class="heart-photo hp10">
+
+          <img
+            src="photo10.jpg"
+            alt="Memory 10"
+          >
+
+        </div>
+
+
+
+        <!-- HEART MESSAGE -->
+
+        <div class="heart-word">
+          you ♡
+        </div>
+
+
+      </div>
+
     </div>
+
   </section>
 
-  <!-- 5. SECOND BOUQUET: ONE PHOTO + FLOWING WORDS -->
-  <section class="slide paper-slide" id="message">
-    <button class="back-button" data-next="bouquets" aria-label="Back">‹</button>
+
+
+  <!-- ==================================================
+       5. SECOND BOUQUET → PHOTO 11 + FLOWING WORDS
+  ================================================== -->
+
+  <section
+    class="slide paper-slide"
+    id="message"
+  >
+
+    <button
+      class="back-button"
+      data-next="bouquets"
+      aria-label="Back"
+    >
+      ‹
+    </button>
+
+
     <div class="message-page">
+
+
+      <!-- PHOTO 11 -->
+
       <div class="single-frame">
-        <img src="photo11.jpg" alt="A favourite photo">
-        <span class="photo-note">I love you! ♡</span>
+
+        <img
+          src="photo11.jpg"
+          alt="A favourite memory"
+        >
+
+        <span class="photo-note">
+          I love you! ♡
+        </span>
+
       </div>
+
+
+
+      <!-- FLOWING WORDS -->
 
       <div class="flowing-message">
-        <div class="script-small">you're</div>
-        <div class="flow-words">
-          <span>my love</span>
-          <span>my heart</span>
-          <span>my favourite person</span>
-          <span>my comfort</span>
-          <span>my safe place</span>
-          <span>my happiness</span>
-          <span>my home</span>
-          <span>my forever favourite</span>
-          <span>my everything ♡</span>
+
+        <div class="script-small">
+          you're
         </div>
+
+
+        <div class="flow-words">
+
+          <span>my love</span>
+
+          <span>my heart</span>
+
+          <span>my favourite person</span>
+
+          <span>my comfort</span>
+
+          <span>my safe place</span>
+
+          <span>my happiness</span>
+
+          <span>my home</span>
+
+          <span>my forever favourite</span>
+
+          <span>my everything ♡</span>
+
+        </div>
+
       </div>
+
     </div>
+
   </section>
 
-  <!-- 6. THIRD BOUQUET: SONG -->
-  <section class="slide paper-slide" id="video">
-    <button class="back-button" data-next="bouquets" aria-label="Back">‹</button>
+
+
+  <!-- ==================================================
+       6. THIRD BOUQUET → SONG
+  ================================================== -->
+
+  <section
+    class="slide paper-slide"
+    id="video"
+  >
+
+    <button
+      class="back-button"
+      data-next="bouquets"
+      aria-label="Back"
+    >
+      ‹
+    </button>
+
+
     <div class="song-page">
-      <div class="song-bunny">♡</div>
+
+
+      <div class="song-bunny">
+        ♡
+      </div>
+
+
       <div class="video-card">
+
         <div class="video-inner">
+
           <iframe
             id="youtubeFrame"
             src="https://www.youtube.com/embed/5rLcgAwn-0A?rel=0&modestbranding=1"
             title="Until I Found You"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-            allowfullscreen></iframe>
+            allowfullscreen
+          ></iframe>
+
         </div>
-        <div class="song-title">UNTIL I FOUND YOU ♡</div>
-        <div class="song-note">this one is for you.</div>
+
+
+        <div class="song-title">
+          UNTIL I FOUND YOU ♡
+        </div>
+
+
+        <div class="song-note">
+          this one is for you.
+        </div>
+
       </div>
+
     </div>
+
   </section>
 
-  <!-- 7. FINAL LETTER -->
-  <section class="slide paper-slide" id="final">
-    <button class="back-button" data-next="bouquets" aria-label="Back">‹</button>
+
+
+  <!-- ==================================================
+       7. FINAL LETTER → PHOTO 12
+  ================================================== -->
+
+  <section
+    class="slide paper-slide"
+    id="final"
+  >
+
+    <button
+      class="back-button"
+      data-next="bouquets"
+      aria-label="Back"
+    >
+      ‹
+    </button>
+
+
     <div class="final-page">
+
+
+      <!-- PHOTO 12 -->
+
       <div class="final-photo">
-        <img src="photo12.jpg" alt="A favourite memory">
-        <span>I love you! ♡</span>
+
+        <img
+          src="photo12.jpg"
+          alt="A favourite memory"
+        >
+
+        <span>
+          I love you! ♡
+        </span>
+
       </div>
+
+
+
+      <!-- FINAL LETTER -->
 
       <article class="final-letter">
-        <h2>The sweet<br>letter ♡</h2>
+
+
+        <h2>
+          The sweet<br>
+          letter ♡
+        </h2>
+
+
         <p>
-          I don't think I say it enough, but I really hope you know how special
-          you are to me. Out of all the little moments, laughs, conversations
-          and memories, you have become someone I am always grateful for.
+          I don't think I say it enough, but I really hope you know
+          how special you are to me. Out of all the little moments,
+          laughs, conversations and memories, you have become someone
+          I am always grateful for.
         </p>
+
+
         <p>
-          Thank you for being you — for the smiles, the comfort, the silly
-          moments and all the memories that make ordinary days feel a little
-          more special.
+          Thank you for being you — for the smiles, the comfort,
+          the silly moments and all the memories that make ordinary
+          days feel a little more special.
         </p>
+
+
         <p>
-          I hope this little website reminds you that you are appreciated,
-          cared for and thought of more than you know. ♡
+          I hope this little website reminds you that you are
+          appreciated, cared for and thought of more than you know. ♡
         </p>
+
+
         <p class="closing">
-          Happy Boyfriend's Day. Here's to many more memories, laughs and
-          beautiful little moments.
+          Happy Boyfriend's Day. Here's to many more memories,
+          laughs and beautiful little moments.
         </p>
-        <div class="final-sign">With lots of love,<br><b>your girl ♡</b></div>
+
+
+        <div class="final-sign">
+          With lots of love,<br>
+          <b>your girl ♡</b>
+        </div>
+
+
       </article>
+
     </div>
+
   </section>
 
+
 </main>
+
+
+<!-- JavaScript -->
 <script src="script.js"></script>
+
 </body>
 </html>
