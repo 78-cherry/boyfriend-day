@@ -1,4 +1,5 @@
 *{box-sizing:border-box}
+
 :root{
   --blue:#dceff5;
   --blue2:#c8e4ed;
@@ -8,207 +9,539 @@
   --ink:#344047;
   --paper:#fffdf9;
 }
-html,body{margin:0;width:100%;height:100%;font-family:"DM Sans",sans-serif;color:var(--ink);background:var(--blue)}
-body{overflow:hidden}
-button,input{font:inherit}
-button{cursor:pointer}
-#app{position:relative;width:100vw;height:100vh;overflow:hidden}
-.slide{
-  position:absolute;inset:0;display:none;align-items:center;justify-content:center;overflow:hidden;
+
+html,body{
+  margin:0;
+  width:100%;
+  height:100%;
+  font-family:"DM Sans",sans-serif;
+  color:var(--ink);
+  background:var(--blue);
 }
-.slide.active{display:flex;animation:slideIn .65s cubic-bezier(.2,.8,.2,1)}
+
+body{
+  overflow:hidden;
+}
+
+button,input{
+  font:inherit;
+}
+
+button{
+  cursor:pointer;
+}
+
+#app{
+  position:relative;
+  width:100vw;
+  height:100vh;
+  overflow:hidden;
+}
+
+/* =========================
+   SLIDES
+========================= */
+
+.slide{
+  position:absolute;
+  inset:0;
+  display:none;
+  align-items:center;
+  justify-content:center;
+  overflow:hidden;
+}
+
+.slide.active{
+  display:flex;
+  animation:slideIn .65s cubic-bezier(.2,.8,.2,1);
+}
+
 .paper-slide{
   background:
-    repeating-linear-gradient(90deg,
+    repeating-linear-gradient(
+      90deg,
       rgba(255,255,255,.52) 0 18px,
-      rgba(193,220,230,.20) 18px 39px),
+      rgba(193,220,230,.20) 18px 39px
+    ),
     linear-gradient(135deg,var(--blue),var(--blue2));
 }
-.paper-slide:before,.paper-slide:after{
-  content:"✦";position:absolute;color:#e57997;opacity:.75;font-size:34px;
-  animation:floatStar 5s ease-in-out infinite;pointer-events:none;
-}
-.paper-slide:before{left:4%;top:18%;transform:rotate(-15deg)}
-.paper-slide:after{right:7%;bottom:13%;animation-delay:1.1s}
-@keyframes slideIn{from{opacity:0;transform:translateX(35px)}to{opacity:1;transform:translateX(0)}}
-@keyframes pop{0%{opacity:0;transform:scale(.8) translateY(20px)}70%{transform:scale(1.03)}100%{opacity:1;transform:scale(1)}}
-@keyframes floatStar{0%,100%{translate:0 0;rotate:0deg}50%{translate:0 -14px;rotate:12deg}}
-@keyframes rise{from{opacity:0;transform:translateY(100px)}to{opacity:1;transform:translateY(0)}}
-@keyframes shake{0%,100%{transform:translateX(0)}25%{transform:translateX(-8px)}75%{transform:translateX(8px)}}
-@keyframes flowUp{0%{opacity:0;transform:translateY(100px)}100%{opacity:1;transform:translateY(0)}}
-@keyframes heartPop{0%{opacity:0;transform:scale(.65) rotate(var(--r))}70%{transform:scale(1.04) rotate(var(--r))}100%{opacity:1;transform:scale(1) rotate(var(--r))}}
 
-.password-screen{background:#11151a}
+.paper-slide:before,
+.paper-slide:after{
+  content:"✦";
+  position:absolute;
+  color:#e57997;
+  opacity:.75;
+  font-size:34px;
+  animation:floatStar 5s ease-in-out infinite;
+  pointer-events:none;
+}
+
+.paper-slide:before{
+  left:4%;
+  top:18%;
+  transform:rotate(-15deg);
+}
+
+.paper-slide:after{
+  right:7%;
+  bottom:13%;
+  animation-delay:1.1s;
+}
+
+/* =========================
+   ANIMATIONS
+========================= */
+
+@keyframes slideIn{
+  from{
+    opacity:0;
+    transform:translateX(35px);
+  }
+  to{
+    opacity:1;
+    transform:translateX(0);
+  }
+}
+
+@keyframes pop{
+  0%{
+    opacity:0;
+    transform:scale(.8) translateY(20px);
+  }
+  70%{
+    transform:scale(1.03);
+  }
+  100%{
+    opacity:1;
+    transform:scale(1);
+  }
+}
+
+@keyframes floatStar{
+  0%,100%{
+    translate:0 0;
+    rotate:0deg;
+  }
+  50%{
+    translate:0 -14px;
+    rotate:12deg;
+  }
+}
+
+@keyframes rise{
+  from{
+    opacity:0;
+    transform:translateY(100px);
+  }
+  to{
+    opacity:1;
+    transform:translateY(0);
+  }
+}
+
+@keyframes shake{
+  0%,100%{
+    transform:translateX(0);
+  }
+  25%{
+    transform:translateX(-8px);
+  }
+  75%{
+    transform:translateX(8px);
+  }
+}
+
+@keyframes flowUp{
+  from{
+    opacity:0;
+    transform:translateY(100px);
+  }
+  to{
+    opacity:1;
+    transform:translateY(0);
+  }
+}
+
+@keyframes heartPop{
+  0%{
+    opacity:0;
+    transform:scale(.65) rotate(var(--r));
+  }
+  70%{
+    transform:scale(1.04) rotate(var(--r));
+  }
+  100%{
+    opacity:1;
+    transform:scale(1) rotate(var(--r));
+  }
+}
+
+/* =========================
+   PASSWORD SCREEN
+========================= */
+
+.password-screen{
+  background:#11151a;
+}
+
 .password-card{
-  width:min(88vw,430px);padding:38px 30px 32px;border-radius:5px;text-align:center;
-  background:#fff;box-shadow:0 30px 80px rgba(0,0,0,.28);animation:pop .7s both
+  width:min(88vw,430px);
+  padding:38px 30px 32px;
+  border-radius:5px;
+  text-align:center;
+  background:#fff;
+  box-shadow:0 30px 80px rgba(0,0,0,.28);
+  animation:pop .7s both;
 }
-.password-card h1{font-family:Georgia,serif;font-weight:400;font-size:22px;margin:0 0 20px;color:#3a3a3a}
+
+.password-card h1{
+  font-family:Georgia,serif;
+  font-weight:400;
+  font-size:22px;
+  margin:0 0 20px;
+  color:#3a3a3a;
+}
+
 #passwordInput{
-  width:100%;padding:13px 14px;border:1px solid #d7d7d7;outline:none;
-  text-align:center;font-size:16px;margin-bottom:13px
+  width:100%;
+  padding:13px 14px;
+  border:1px solid #d7d7d7;
+  outline:none;
+  text-align:center;
+  font-size:16px;
+  margin-bottom:13px;
 }
-#passwordInput:focus{border-color:#7350d8}
+
+#passwordInput:focus{
+  border-color:#7350d8;
+}
+
 #passwordButton{
-  width:100%;border:0;border-radius:2px;padding:13px;background:#5c31d8;color:white;font-weight:600
+  width:100%;
+  border:0;
+  border-radius:2px;
+  padding:13px;
+  background:#5c31d8;
+  color:white;
+  font-weight:600;
 }
-.error{height:18px;color:#d9405d;font-size:13px;margin:10px 0 0}
-.shake{animation:shake .3s}
 
-.stars{position:absolute;top:17%;left:50%;transform:translateX(-50%);color:#df718d;font-size:21px;opacity:.8}
-.welcome-content{text-align:center;z-index:1;animation:pop .9s both}
+.error{
+  height:18px;
+  color:#d9405d;
+  font-size:13px;
+  margin:10px 0 0;
+}
+
+.shake{
+  animation:shake .3s;
+}
+
+/* =========================
+   WELCOME
+========================= */
+
+.stars{
+  position:absolute;
+  top:17%;
+  left:50%;
+  transform:translateX(-50%);
+  color:#df718d;
+  font-size:21px;
+  opacity:.8;
+}
+
+.welcome-content{
+  text-align:center;
+  z-index:1;
+  animation:pop .9s both;
+}
+
 .script-title{
-  font-family:"Berkshire Swash",cursive;font-weight:400;
-  font-size:clamp(58px,11vw,118px);line-height:.9;margin:0;
-  color:#e45776;text-shadow:2px 3px 0 #fff;
+  font-family:"Berkshire Swash",cursive;
+  font-weight:400;
+  font-size:clamp(58px,11vw,118px);
+  line-height:.9;
+  margin:0;
+  color:#e45776;
+  text-shadow:2px 3px 0 #fff;
 }
-.next-arrow{
-  position:absolute;right:14px;top:50%;transform:translateY(-50%);
-  width:65px;height:100px;border:0;background:transparent;color:var(--red);
-  font-family:Georgia,serif;font-size:90px;line-height:1;z-index:10;
-  transition:.2s
-}
-.next-arrow:hover{transform:translateY(-50%) translateX(5px) scale(1.08)}
-.bouquet-arrow{right:8px}
 
-.section-heading{position:absolute;top:12%;left:0;right:0;text-align:center;z-index:2;animation:rise .8s both}
+.next-arrow{
+  position:absolute;
+  right:14px;
+  top:50%;
+  transform:translateY(-50%);
+  width:65px;
+  height:100px;
+  border:0;
+  background:transparent;
+  color:var(--red);
+  font-family:Georgia,serif;
+  font-size:90px;
+  line-height:1;
+  z-index:10;
+  transition:.2s;
+}
+
+.next-arrow:hover{
+  transform:translateY(-50%) translateX(5px) scale(1.08);
+}
+
+.bouquet-arrow{
+  right:8px;
+}
+
+/* =========================
+   BOUQUETS
+========================= */
+
+.section-heading{
+  position:absolute;
+  top:12%;
+  left:0;
+  right:0;
+  text-align:center;
+  z-index:2;
+  animation:rise .8s both;
+}
+
 .section-heading h2{
-  font-family:"Patrick Hand",cursive;font-weight:700;font-size:clamp(28px,5.7vw,61px);
-  letter-spacing:.5px;color:#df5575;margin:0;text-shadow:2px 2px #fff
+  font-family:"Patrick Hand",cursive;
+  font-weight:700;
+  font-size:clamp(28px,5.7vw,61px);
+  letter-spacing:.5px;
+  color:#df5575;
+  margin:0;
+  text-shadow:2px 2px #fff;
 }
+
 .bouquet-grid{
-  width:min(92vw,1040px);display:grid;grid-template-columns:repeat(3,1fr);
-  gap:clamp(15px,3vw,42px);align-items:center;margin-top:100px;z-index:1
+  width:min(92vw,1040px);
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:clamp(15px,3vw,42px);
+  align-items:center;
+  margin-top:100px;
+  z-index:1;
 }
+
 .bouquet-card{
-  border:0;background:transparent;padding:0;position:relative;transition:.35s;
-  animation:rise .8s both
+  border:0;
+  background:transparent;
+  padding:0;
+  position:relative;
+  transition:.35s;
+  animation:rise .8s both;
 }
-.bouquet-card:nth-child(2){animation-delay:.1s;transform:translateY(-16px)}
-.bouquet-card:nth-child(3){animation-delay:.2s}
-.bouquet-card:hover{transform:translateY(-10px) scale(1.04)}
-.bouquet-card:nth-child(2):hover{transform:translateY(-26px) scale(1.04)}
+
+.bouquet-card:nth-child(2){
+  animation-delay:.1s;
+  transform:translateY(-16px);
+}
+
+.bouquet-card:nth-child(3){
+  animation-delay:.2s;
+}
+
+.bouquet-card:hover{
+  transform:translateY(-10px) scale(1.04);
+}
+
+.bouquet-card:nth-child(2):hover{
+  transform:translateY(-26px) scale(1.04);
+}
+
 .bouquet-card img{
-  display:block;width:100%;height:350px;object-fit:contain;
-  filter:drop-shadow(0 17px 17px rgba(50,80,90,.14))
+  display:block;
+  width:100%;
+  height:350px;
+  object-fit:contain;
+  filter:drop-shadow(0 17px 17px rgba(50,80,90,.14));
 }
-.little-stars{position:absolute;bottom:6%;color:#e77c99;font-size:20px}
+
+.little-stars{
+  position:absolute;
+  bottom:6%;
+  color:#e77c99;
+  font-size:20px;
+}
+
+/* =========================
+   BACK BUTTON
+========================= */
 
 .back-button{
-  position:absolute;left:17px;top:17px;z-index:20;width:48px;height:48px;border:0;
-  background:rgba(255,255,255,.72);color:#d04b67;font-size:42px;line-height:1;
-  box-shadow:0 8px 18px rgba(75,111,122,.15)
+  position:absolute;
+  left:17px;
+  top:17px;
+  z-index:20;
+  width:48px;
+  height:48px;
+  border:0;
+  background:rgba(255,255,255,.72);
+  color:#d04b67;
+  font-size:42px;
+  line-height:1;
+  box-shadow:0 8px 18px rgba(75,111,122,.15);
 }
 
-/* TEN-PHOTO HEART */
-.heart-page{width:min(96vw,920px);height:90vh;position:relative;z-index:1}
+/* ==================================================
+   TEN-PHOTO HEART
+   PHOTOS 1-10 ONLY
+================================================== */
+
+.heart-page{
+  width:min(96vw,920px);
+  height:90vh;
+  position:relative;
+  z-index:1;
+}
+
 .heart-heading{
-  text-align:center;font-family:"Berkshire Swash",cursive;color:#df6280;
-  font-size:clamp(28px,4vw,46px);margin-bottom:5px;animation:rise .7s both
+  text-align:center;
+  font-family:"Berkshire Swash",cursive;
+  color:#df6280;
+  font-size:clamp(28px,4vw,46px);
+  margin-bottom:5px;
+  animation:rise .7s both;
 }
-.heart-collage{position:relative;width:min(90vw,760px);height:min(75vh,650px);margin:auto}
+
+/* The area containing the heart */
+.heart-collage{
+  position:relative;
+  width:min(90vw,760px);
+  height:min(75vh,650px);
+  margin:auto;
+}
+
+/* PHOTO CARD */
 .heart-photo{
-  position:absolute;width:115px;height:145px;background:#fff;padding:8px;
-  box-shadow:0 12px 28px rgba(48,70,80,.22);opacity:0;
-  animation:heartPop .75s forwards;overflow:hidden
+  position:absolute;
+  width:115px;
+  height:145px;
+  background:#fff;
+  padding:8px;
+  box-shadow:0 12px 28px rgba(48,70,80,.22);
+  opacity:0;
+  overflow:hidden;
+  animation:heartPop .75s forwards;
+  z-index:2;
 }
-.heart-photo img{width:100%;height:100%;object-fit:cover;display:block}
-.hp1{left:25%;top:5%;--r:-8deg;animation-delay:.05s}
-.hp2{left:50%;top:5%;--r:8deg;animation-delay:.12s}
 
-.hp3{left:8%;top:25%;--r:-12deg;animation-delay:.19s}
-.hp4{left:30%;top:25%;--r:4deg;animation-delay:.26s}
-.hp5{left:52%;top:25%;--r:-4deg;animation-delay:.33s}
-.hp6{left:74%;top:25%;--r:12deg;animation-delay:.40s}
+.heart-photo img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  display:block;
+}
 
-.hp7{left:15%;top:45%;--r:-6deg;animation-delay:.47s}
-.hp8{left:38%;top:44%;--r:5deg;animation-delay:.54s}
-.hp9{left:61%;top:44%;--r:-5deg;animation-delay:.61s}
-.hp10{left:76%;top:45%;--r:7deg;animation-delay:.68s}
+/* =========================
+   HEART SHAPE - 10 PHOTOS
+========================= */
 
-.hp11{left:27%;top:64%;--r:-6deg;animation-delay:.75s}
-.hp12{left:51%;top:64%;--r:7deg;animation-delay:.82s}
+/* top left lobe */
+.hp1{
+  left:18%;
+  top:4%;
+  --r:-10deg;
+  animation-delay:.05s;
+}
+
+/* top middle */
+.hp2{
+  left:39%;
+  top:0%;
+  --r:5deg;
+  animation-delay:.12s;
+}
+
+/* top right lobe */
+.hp3{
+  left:60%;
+  top:4%;
+  --r:10deg;
+  animation-delay:.19s;
+}
+
+/* far left */
+.hp4{
+  left:5%;
+  top:25%;
+  --r:-12deg;
+  animation-delay:.26s;
+}
+
+/* upper-left inner */
+.hp5{
+  left:28%;
+  top:22%;
+  --r:3deg;
+  animation-delay:.33s;
+}
+
+/* upper-right inner */
+.hp6{
+  left:51%;
+  top:22%;
+  --r:-3deg;
+  animation-delay:.40s;
+}
+
+/* far right */
+.hp7{
+  left:74%;
+  top:25%;
+  --r:12deg;
+  animation-delay:.47s;
+}
+
+/* lower-left */
+.hp8{
+  left:20%;
+  top:44%;
+  --r:-7deg;
+  animation-delay:.54s;
+}
+
+/* lower-right */
+.hp9{
+  left:61%;
+  top:44%;
+  --r:7deg;
+  animation-delay:.61s;
+}
+
+/* bottom point */
+.hp10{
+  left:40%;
+  top:65%;
+  --r:2deg;
+  animation-delay:.68s;
+}
+
+/*
+  IMPORTANT:
+  Do NOT put photo11 or photo12 here.
+  Photo11 is for the next page.
+  Photo12 is for the final letter page.
+*/
+
 .heart-word{
-  position:absolute;left:50%;top:82%;transform:translateX(-50%);
-  font-family:"Berkshire Swash",cursive;color:#df5575;font-size:34px
+  position:absolute;
+  left:50%;
+  top:86%;
+  transform:translateX(-50%);
+  font-family:"Berkshire Swash",cursive;
+  color:#df5575;
+  font-size:34px;
+  white-space:nowrap;
 }
 
-/* SECOND BOUQUET */
+/* =========================
+   SECOND BOUQUET
+========================= */
+
 .message-page{
-  width:min(93vw,1080px);display:grid;grid-template-columns:1fr .9fr;
-  gap:clamp(25px,6vw,85px);align-items:center;z-index:1
-}
-.single-frame{
-  position:relative;background:#fff;padding:15px 15px 50px;
-  box-shadow:0 20px 45px rgba(50,70,80,.2);transform:rotate(-2deg);
-  animation:pop .8s both
-}
-.single-frame:before{
-  content:"";position:absolute;inset:-10px;border:5px solid #f3a0b8;z-index:-1;
-  clip-path:polygon(0 4%,100% 0,98% 96%,3% 100%)
-}
-.single-frame img{width:100%;aspect-ratio:1.18;display:block;object-fit:cover}
-.photo-note{position:absolute;right:18px;bottom:8px;font-family:"Patrick Hand";font-size:20px;color:#d64c69}
-.flowing-message{animation:flowUp 1s .15s both}
-.script-small{font-family:"Berkshire Swash",cursive;font-size:clamp(48px,7vw,78px);color:#e47a96;margin-bottom:8px}
-.flow-words{display:grid;gap:3px;font-family:"Patrick Hand",cursive;font-size:clamp(22px,3vw,31px);color:#303a40}
-.flow-words span{animation:flowUp .7s both}
-.flow-words span:nth-child(1){animation-delay:.20s}
-.flow-words span:nth-child(2){animation-delay:.27s}
-.flow-words span:nth-child(3){animation-delay:.34s}
-.flow-words span:nth-child(4){animation-delay:.41s}
-.flow-words span:nth-child(5){animation-delay:.48s}
-.flow-words span:nth-child(6){animation-delay:.55s}
-.flow-words span:nth-child(7){animation-delay:.62s}
-.flow-words span:nth-child(8){animation-delay:.69s}
-.flow-words span:nth-child(9){animation-delay:.76s}
-
-/* SONG */
-.song-page{width:min(90vw,900px);z-index:1;text-align:center;animation:rise .8s both}
-.song-bunny{font-family:"Berkshire Swash";font-size:35px;color:#df6d89;margin-bottom:8px}
-.video-card{background:rgba(255,255,255,.72);padding:14px;border-radius:8px;box-shadow:0 22px 50px rgba(50,70,80,.2)}
-.video-inner{aspect-ratio:16/9;background:#101318;overflow:hidden}
-.video-inner iframe{width:100%;height:100%;border:0}
-.song-title{font-family:"Patrick Hand";font-size:29px;color:#d84f6b;margin:12px 0 0}
-.song-note{font-size:14px;color:#68747a}
-
-/* FINAL LETTER */
-.final-page{
-  width:min(94vw,1120px);background:rgba(255,253,248,.94);padding:clamp(20px,4vw,42px);
-  display:grid;grid-template-columns:1fr 1fr;gap:clamp(25px,6vw,80px);align-items:center;
-  box-shadow:0 25px 60px rgba(60,75,80,.18);z-index:1;animation:rise .9s both
-}
-.final-photo{position:relative;background:#fff;padding:13px 13px 45px;transform:rotate(-2deg);box-shadow:0 12px 30px rgba(50,60,60,.16)}
-.final-photo img{width:100%;display:block;aspect-ratio:1.1;object-fit:cover}
-.final-photo span{position:absolute;bottom:10px;right:17px;font-family:"Patrick Hand";color:#d84f6b;font-size:20px}
-.final-letter{padding:5px 10px}
-.final-letter h2{font-family:"Berkshire Swash";font-weight:400;color:#3d4c55;font-size:clamp(45px,6vw,72px);line-height:.8;margin:0 0 22px}
-.final-letter p{font-family:"Patrick Hand";font-size:21px;line-height:1.35;color:#4d5a60;margin:8px 0}
-.final-letter .closing{color:#d04e6c}
-.final-sign{text-align:right;font-family:"Patrick Hand";font-size:22px;color:#d84f6b;margin-top:18px}
-
-@media(max-width:760px){
-  .script-title{font-size:clamp(50px,15vw,78px)}
-  .bouquet-grid{grid-template-columns:repeat(3,1fr);gap:3px;width:96vw;margin-top:105px}
-  .bouquet-card img{height:270px}
-  .section-heading h2{font-size:29px;line-height:1}
-  .heart-page{height:90vh;width:100vw}
-  .heart-heading{font-size:27px;margin-top:30px}
-  .heart-collage{height:70vh;width:96vw}
-  .heart-photo{width:82px;height:82px;padding:5px}
-  .hp1{left:25%;top:5%}.hp2{left:43%;top:5%}
-  .hp3{left:8%;top:23%}.hp4{left:29%;top:22%}.hp5{left:50%;top:22%}.hp6{left:71%;top:23%}
-  .hp7{left:18%;top:43%}.hp8{left:40%;top:43%}.hp9{left:62%;top:43%}.hp10{left:39%;top:64%}
-  .heart-word{top:80%;font-size:26px}
-  .message-page{grid-template-columns:1fr;gap:20px;width:86vw;max-height:92vh;overflow:auto;padding-top:55px}
-  .single-frame{max-height:48vh}
-  .single-frame img{max-height:38vh}
-  .flow-words{font-size:22px}
-  .flowing-message{padding-bottom:25px}
-  .video-card{width:94vw}
-  .final-page{grid-template-columns:1fr;gap:18px;width:88vw;max-height:92vh;overflow:auto;padding:18px 16px 28px}
-  .final-photo img{max-height:37vh}
-  .final-letter h2{font-size:46px}
-  .final-letter p{font-size:19px}
-  .next-arrow{right:0}
-}
+  width:min(93vw,108
